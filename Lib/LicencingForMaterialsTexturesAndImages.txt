@@ -1,0 +1,116 @@
+Licencing by the Company Vektoriua UG (haftungsbeschränkt)
+
+The texture and font images in the folders:
+Vektoria/Lib/Materials
+Vektoria/Lib/Fonts
+are licenced unter Creative Commons: CC BY-NC-SA 3.0 DE (http://creativecommons.org/licenses/by-nc-sa/3.0/de/).
+The author is: Prof. Dr. Tobias Breiner 
+
+So you are free to:
+Share — copy and redistribute the material in any medium or format 
+Adapt — remix, transform, and build upon the material 
+The licensor cannot revoke these freedoms as long as you follow the following terms:
+- Attribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, 
+  but not in any way that suggests the licensor endorses you or your use.  
+- NonCommercial: You may not use the material for commercial purposes.  
+- ShareAlike: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.  
+- No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits. 
+
+Notices: 
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation. 
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. 
+For example, other rights such as publicity, privacy, or moral rights may limit how you use the material. 
+
+Exeptions:
+- The texture "SunG.jpg" in the folder "Materials/Sun" is created by the NASA and is public domain in the USA and in Germany (and probably in most other countries, but no warranty!)
+- The texture "NasaStarsG.jpg" in the folder "Materials/NasaStars" is created by the NASA and is public domain in the USA and in Germany (and probably in most other countries, but no warranty!), Downloaded from: https://svs.gsfc.nasa.gov/3895 on 2017-09-07. Credits to NASA/Goddard SpaceFlightCenter ScientificVisualisationStudio Constallation figures based on those develloped for the IAU by Alan MacRobert of Sky and Telescope magazine (Roger Sinnott and Rick Fienberg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(If you want to use the textures or some of the textures for commercial purposes, please contact us: info@3D-Generation.de)
+
+
+
+ 

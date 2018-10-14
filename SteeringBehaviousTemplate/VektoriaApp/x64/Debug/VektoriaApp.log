@@ -1,0 +1,11 @@
+﻿  Game.cpp
+c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\math.h(1001): warning C4005: "M_PI": Makro-Neudefinition
+  c:\users\chris\documents\kifuergames\vektoria\steeringbehavioustemplate\vektoriaapp\stdafx.h(13): note: Siehe vorherige Definition von "M_PI"
+  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\chris\documents\kifuergames\vektoria\steeringbehavioustemplate\vektoriaapp\game.cpp(31): warning C4305: "Argument": Verkürzung von "double" in "float"
+c:\users\chris\documents\kifuergames\vektoria\steeringbehavioustemplate\vektoriaapp\game.cpp(42): warning C4305: "=": Verkürzung von "double" in "float"
+c:\users\chris\documents\kifuergames\vektoria\steeringbehavioustemplate\vektoriaapp\game.cpp(52): warning C4305: "=": Verkürzung von "double" in "float"
+c:\users\chris\documents\kifuergames\vektoria\steeringbehavioustemplate\vektoriaapp\game.cpp(99): warning C4244: "Initialisierung": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\chris\documents\kifuergames\vektoria\steeringbehavioustemplate\vektoriaapp\game.cpp(100): warning C4244: "Initialisierung": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\chris\documents\kifuergames\vektoria\steeringbehavioustemplate\vektoriaapp\game.cpp(101): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+  VektoriaApp.vcxproj -> C:\Users\Chris\Documents\KiFuerGames\Vektoria\SteeringBehaviousTemplate\x64\Debug\VektoriaApp.exe

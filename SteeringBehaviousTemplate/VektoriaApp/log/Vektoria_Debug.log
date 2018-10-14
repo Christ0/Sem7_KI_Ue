@@ -1,0 +1,15 @@
+****************
+Vektoria-Logfile
+
+****************
+Ok:    Distribudted Graphics API established
+Ok:    Collected materials in virtual hierarchy
+Ok:    Collected materials in real hierarchy
+Ok:    Graphics API established
+Error: Unable to Init OpenVR. Reason: Installation path could not be located (110)
+Ok:    Sound Api created
+Ok:    Frames created
+Ok:    Scenes created
+Ok:    Hierarchy checked.
+Ok:    Materials created
+Ok:    Viewports created
