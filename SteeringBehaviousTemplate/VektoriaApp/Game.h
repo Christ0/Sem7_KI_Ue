@@ -78,6 +78,12 @@
 #include "Spielfeld.h"
 #include "Boid.h"
 #include "SteeringBehaviour.h"
+#include "SteeringBehaviourKinematicSeek.h"
+#include "SteeringBehaviourKinematicFlee.h"
+#include "SteeringBehaviourKinematicArrive.h"
+#include "SteeringBehaviourDynamicSeek.h"
+#include "SteeringBehaviourDynamicFlee.h"
+#include "SteeringBehaviourDynamicArrive.h"
 
 #include "Vektoria\Root.h"
 

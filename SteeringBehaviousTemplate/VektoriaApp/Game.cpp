@@ -35,7 +35,7 @@ void CGame::Init(HWND hwnd, void(*procOS)(HWND hwnd, unsigned int uWndFlags), CS
 	srand(timeGetTime());
 	
 	//KI Objekte
-	m_numberofboids =  50;
+	m_numberofboids =  5;
 	for (size_t i = 0; i < m_numberofboids; i++)
 	{
 		Boid *aboid = new Boid();
@@ -45,7 +45,7 @@ void CGame::Init(HWND hwnd, void(*procOS)(HWND hwnd, unsigned int uWndFlags), CS
 		m_boid.push_back(aboid);
 	}
 
-	m_numberoftargets = 10;
+	m_numberoftargets = 1;
 	for (size_t i = 0; i < m_numberoftargets; i++)
 	{
 		Boid *atarget = new Boid();
@@ -55,8 +55,9 @@ void CGame::Init(HWND hwnd, void(*procOS)(HWND hwnd, unsigned int uWndFlags), CS
 		m_target.push_back(atarget);
 	}
 
-	m_steeringbehaviourCharakter = new SteeringBehaviour(&m_spielfeld);
-	m_steeringbehaviourZiel = new SteeringBehaviour(&m_spielfeld);
+	m_steeringbehaviourCharakter = new SteeringBehaviourKinematicSeek(&m_spielfeld);
+	m_steeringbehaviourZiel = new SteeringBehaviourKinematicSeek(&m_spielfeld);
+	m_steeringbehaviourCharakter->settarget(&m_target);
 
 	for (size_t i = 0; i < m_boid.size(); i++)
 	{
@@ -90,6 +91,63 @@ void CGame::Tick(float fTime, float fTimeDelta)
 	{
 		m_target[i]->Tick(fTime, fTimeDelta);
 	}
+
+	//Reset Boids + Targets
+	if (m_zdKeyboard.KeyDown(DIK_R)) {
+		for (size_t i = 0; i < m_boid.size(); i++) {
+			m_boid[i]->reset(randomposition());
+		}
+		for (size_t i = 0; i < m_target.size(); i++) {
+			m_target[i]->reset(randomposition());
+		}
+	}
+	//SeekKine
+	if (m_zdKeyboard.KeyDown(DIK_S)) {
+		delete m_steeringbehaviourCharakter;
+		m_steeringbehaviourCharakter = new SteeringBehaviourKinematicSeek(&m_spielfeld);
+		m_steeringbehaviourCharakter->settarget(&m_target);
+	}
+
+	//FleeKine
+	if (m_zdKeyboard.KeyDown(DIK_F)) {
+		delete m_steeringbehaviourCharakter;
+		m_steeringbehaviourCharakter = new SteeringBehaviourKinematicFlee(&m_spielfeld);
+		m_steeringbehaviourCharakter->settarget(&m_target);
+	}
+
+	//ArriveKine
+	if (m_zdKeyboard.KeyDown(DIK_A)) {
+		delete m_steeringbehaviourCharakter;
+		m_steeringbehaviourCharakter = new SteeringBehaviourKinematicArrive(&m_spielfeld);
+		m_steeringbehaviourCharakter->settarget(&m_target);
+	}
+
+
+	//SeekDyna
+	if (m_zdKeyboard.KeyDown(DIK_X)) {
+		delete m_steeringbehaviourCharakter;
+		m_steeringbehaviourCharakter = new SteeringBehaviourDynamicSeek(&m_spielfeld);
+		m_steeringbehaviourCharakter->settarget(&m_target);
+	}
+
+	//FleeDyna
+	if (m_zdKeyboard.KeyDown(DIK_Z)) {
+		delete m_steeringbehaviourCharakter;
+		m_steeringbehaviourCharakter = new SteeringBehaviourDynamicFlee(&m_spielfeld);
+		m_steeringbehaviourCharakter->settarget(&m_target);
+	}
+
+	//ArriveDyna
+	if (m_zdKeyboard.KeyDown(DIK_C)) {
+		delete m_steeringbehaviourCharakter;
+		m_steeringbehaviourCharakter = new SteeringBehaviourDynamicArrive(&m_spielfeld);
+		m_steeringbehaviourCharakter->settarget(&m_target);
+	}
+
+
+
+
+	m_steeringbehaviourCharakter->Tick(fTime, fTimeDelta, m_boid.at(0));
 
 	//Interface
 	this->keyboardUI();

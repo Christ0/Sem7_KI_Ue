@@ -39,6 +39,24 @@
     <ClInclude Include="Steuerung.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="SteeringBehaviourKinematicArrive.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviourKinematicSeek.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviourKinematicFlee.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviourDynamicFlee.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviourDynamicSeek.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviourDynamicArrive.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -60,6 +78,24 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Steuerung.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviourKinematicArrive.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviourKinematicSeek.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviourKinematicFlee.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviourDynamicFlee.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviourDynamicSeek.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviourDynamicArrive.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,7 +8,8 @@ SteeringBehaviour::SteeringBehaviour(Spielfeld *aspielfeld)
 	m_boid = NULL;
 	m_targetgroup = NULL;
 
-	m_facemode = MOVEDIRECTION;
+	m_facemode = FACETARGET;
+	m_movingMode = DYNAMIC;
 }
 
 
@@ -29,6 +30,14 @@ void SteeringBehaviour::setfacing(FaceingMode facemode) {
 }
 void SteeringBehaviour::settarget(std::vector<Boid*> *atarget) {
 	m_targetgroup = atarget;
+	if (m_targetgroup) {
+		m_kinematikZiel = m_targetgroup->at(0)->getKinematik();
+	}
+	else return;
+}
+
+void SteeringBehaviour::setMoving(MovingMode movingMode){
+	m_movingMode = movingMode;
 }
 
 void SteeringBehaviour::Tick(float fTime, float fTimeDelta, Boid *aboid) {
@@ -38,11 +47,10 @@ void SteeringBehaviour::Tick(float fTime, float fTimeDelta, Boid *aboid) {
 	if (m_boid) {
 		m_kinematikBoid = m_boid->getKinematik();
 	}
-	else
-	{
-		return;
-	}
+	else return;
+	
 
+	//Reset Steuerung
 	Steuerung ergSteuerung;
 	ergSteuerung.linear = CHVector(0.f, 0.f, 0.f);
 	ergSteuerung.angular = 0.f;
@@ -62,6 +70,7 @@ void SteeringBehaviour::Tick(float fTime, float fTimeDelta, Boid *aboid) {
 	m_kinematikBoid->orientierung += m_kinematikBoid->rotation*fTimeDelta;
 
 	if (m_facemode == MOVEDIRECTION) {
+		
 	}
 
 	if (m_targetgroup && m_facemode == FACETARGET) {
@@ -103,19 +112,28 @@ void SteeringBehaviour::billiardkinematik() {
 }
 
 CHVector SteeringBehaviour::truncate(CHVector avector, float maxlenght) {
-	CHVector result;
-	//
-
-	return result;
+	if (avector.Length() > maxlenght) {
+		float x = avector.Length();
+		avector /= avector.Length();
+		avector *= maxlenght;
+		vectorToAngle(CHVector(1, 0, 3.5));
+	}
+	return avector;
 }
 
 
 CHVector SteeringBehaviour::angletovector(float angle) {
-	CHVector result = CHVector(0.f, 0.f, 0.f);
-	///
-
+	angle = DEGREES_TO_RADIANS(angle);
+	CHVector result = CHVector(cos(angle), 0.f, sin(angle));
 	return result.Normal();
+	//Vektor zu Winkel:
+	//float a = atan(3.5 / 1);
 
+}
+
+float SteeringBehaviour::vectorToAngle(CHVector v){
+	//Ergebnis in Radian
+	return atan(v.z / v.x);
 }
 
 float SteeringBehaviour::orientationToMoveDirection(float currentorientation, CHVector geschwindigkeit) {
