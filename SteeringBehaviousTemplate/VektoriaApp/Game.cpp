@@ -29,13 +29,13 @@ void CGame::Init(HWND hwnd, void(*procOS)(HWND hwnd, unsigned int uWndFlags), CS
 	m_zpCamera.AddCamera(&m_zc);
 
 	m_zpCamera.RotateXDelta(DEGREES_TO_RADIANS(-45));
-	m_zpCamera.TranslateYDelta(150.0f);
-	m_zpCamera.TranslateZDelta(150.0f);
+	m_zpCamera.TranslateYDelta(100.0f);
+	m_zpCamera.TranslateZDelta(100.0f);
 
 	srand(timeGetTime());
 	
 	//KI Objekte
-	m_numberofboids =  5;
+	m_numberofboids =  50;
 	for (size_t i = 0; i < m_numberofboids; i++)
 	{
 		Boid *aboid = new Boid();
@@ -59,6 +59,7 @@ void CGame::Init(HWND hwnd, void(*procOS)(HWND hwnd, unsigned int uWndFlags), CS
 	m_steeringbehaviourZiel = new SteeringBehaviourKinematicSeek(&m_spielfeld);
 	m_steeringbehaviourCharakter->settarget(&m_target);
 
+	//Placements
 	for (size_t i = 0; i < m_boid.size(); i++)
 	{
 		m_zs.AddPlacement(m_boid[i]->getPlacement());
@@ -101,6 +102,7 @@ void CGame::Tick(float fTime, float fTimeDelta)
 			m_target[i]->reset(randomposition());
 		}
 	}
+
 	//SeekKine
 	if (m_zdKeyboard.KeyDown(DIK_S)) {
 		delete m_steeringbehaviourCharakter;
@@ -144,10 +146,17 @@ void CGame::Tick(float fTime, float fTimeDelta)
 		m_steeringbehaviourCharakter->settarget(&m_target);
 	}
 
+	//WanderDyna
+	if (m_zdKeyboard.KeyDown(DIK_W)) {
+		delete m_steeringbehaviourCharakter;
+		m_steeringbehaviourCharakter = new SteeringBehaviourDynamicWander(&m_spielfeld);
+		m_steeringbehaviourCharakter->settarget(&m_target);
+	}
 
-
-
-	m_steeringbehaviourCharakter->Tick(fTime, fTimeDelta, m_boid.at(0));
+	for (size_t i = 0; i < m_boid.size(); i++) {
+		m_steeringbehaviourCharakter->Tick(fTime, fTimeDelta, m_boid.at(i));
+	}
+	
 
 	//Interface
 	this->keyboardUI();

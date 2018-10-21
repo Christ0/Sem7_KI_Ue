@@ -157,6 +157,7 @@
     <ClInclude Include="SteeringBehaviourDynamicArrive.h" />
     <ClInclude Include="SteeringBehaviourDynamicFlee.h" />
     <ClInclude Include="SteeringBehaviourDynamicSeek.h" />
+    <ClInclude Include="SteeringBehaviourDynamicWander.h" />
     <ClInclude Include="SteeringBehaviourKinematicArrive.h" />
     <ClInclude Include="SteeringBehaviourKinematicSeek.h" />
     <ClInclude Include="SteeringBehaviourKinematicFlee.h" />
@@ -172,6 +173,7 @@
     <ClCompile Include="SteeringBehaviourDynamicArrive.cpp" />
     <ClCompile Include="SteeringBehaviourDynamicFlee.cpp" />
     <ClCompile Include="SteeringBehaviourDynamicSeek.cpp" />
+    <ClCompile Include="SteeringBehaviourDynamicWander.cpp" />
     <ClCompile Include="SteeringBehaviourKinematicArrive.cpp" />
     <ClCompile Include="SteeringBehaviourKinematicSeek.cpp" />
     <ClCompile Include="SteeringBehaviourKinematicFlee.cpp" />

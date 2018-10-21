@@ -16,7 +16,7 @@ SteeringBehaviourDynamicFlee::~SteeringBehaviourDynamicFlee()
 
 Steuerung SteeringBehaviourDynamicFlee::update(Boid * aboid, std::vector<Boid*>* atarget) {
 	Steuerung ergSteuerung;
-	ergSteuerung.linear = CHVector(0.f, 0.f, 0.f);
+	//ergSteuerung.linear = CHVector(1.f, 0.f, 1.f);
 	ergSteuerung.angular = 0.f;
 	ergSteuerung.linear = m_kinematikBoid->position - m_kinematikZiel->position;
 	ergSteuerung.linear = ergSteuerung.linear.Normal() * m_boid->getMaxSteuerungsKraft();

@@ -57,6 +57,9 @@
     <ClInclude Include="SteeringBehaviourDynamicArrive.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="SteeringBehaviourDynamicWander.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -96,6 +99,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="SteeringBehaviourDynamicArrive.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviourDynamicWander.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

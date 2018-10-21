@@ -74,7 +74,6 @@ void Boid::Tick(float fTime, float fTimeDelta){
 }
 
 void Boid::reset(CHVector aposition){
-
 	m_kinematik.orientierung = DEGREES_TO_RADIANS(rand() % 360)/*0.0f*/;
 	m_kinematik.position = aposition;
 	//Bewegung

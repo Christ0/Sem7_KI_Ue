@@ -48,7 +48,6 @@ void SteeringBehaviour::Tick(float fTime, float fTimeDelta, Boid *aboid) {
 		m_kinematikBoid = m_boid->getKinematik();
 	}
 	else return;
-	
 
 	//Reset Steuerung
 	Steuerung ergSteuerung;
@@ -70,10 +69,11 @@ void SteeringBehaviour::Tick(float fTime, float fTimeDelta, Boid *aboid) {
 	m_kinematikBoid->orientierung += m_kinematikBoid->rotation*fTimeDelta;
 
 	if (m_facemode == MOVEDIRECTION) {
-		
+		m_kinematikBoid->orientierung = orientationToMoveDirection(m_kinematikBoid->orientierung, m_kinematikBoid->geschwindigkeit);
 	}
 
 	if (m_targetgroup && m_facemode == FACETARGET) {
+		
 	}
 
 	//checke on Spielfeldrand erreicht wurde
@@ -116,19 +116,15 @@ CHVector SteeringBehaviour::truncate(CHVector avector, float maxlenght) {
 		float x = avector.Length();
 		avector /= avector.Length();
 		avector *= maxlenght;
-		vectorToAngle(CHVector(1, 0, 3.5));
 	}
 	return avector;
 }
 
 
 CHVector SteeringBehaviour::angletovector(float angle) {
-	angle = DEGREES_TO_RADIANS(angle);
+	//angle = DEGREES_TO_RADIANS(angle);
 	CHVector result = CHVector(cos(angle), 0.f, sin(angle));
 	return result.Normal();
-	//Vektor zu Winkel:
-	//float a = atan(3.5 / 1);
-
 }
 
 float SteeringBehaviour::vectorToAngle(CHVector v){
@@ -138,6 +134,8 @@ float SteeringBehaviour::vectorToAngle(CHVector v){
 
 float SteeringBehaviour::orientationToMoveDirection(float currentorientation, CHVector geschwindigkeit) {
 	float result = currentorientation;
-	//
+	if (geschwindigkeit.Length() > 0) {
+		result = -atan2(-geschwindigkeit.x, geschwindigkeit.z);
+	}
 	return result;
 }

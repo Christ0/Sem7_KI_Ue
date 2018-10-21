@@ -7,7 +7,7 @@ SteeringBehaviourDynamicArrive::SteeringBehaviourDynamicArrive(Spielfeld * aspie
 	m_boid = NULL;
 	m_targetgroup = NULL;
 	m_radius = 2.f;
-	m_timeToArrive = 0.95f;
+	m_timeToArrive = 0.1f;
 
 	m_facemode = MOVEDIRECTION;
 }

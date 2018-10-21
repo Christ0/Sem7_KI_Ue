@@ -1,5 +1,6 @@
 #pragma once
 
+#include "stdafx.h"
 #include "Boid.h"
 #include "Spielfeld.h"
 #include "Kinematik.h"

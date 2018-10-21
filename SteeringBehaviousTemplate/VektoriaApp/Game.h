@@ -84,6 +84,7 @@
 #include "SteeringBehaviourDynamicSeek.h"
 #include "SteeringBehaviourDynamicFlee.h"
 #include "SteeringBehaviourDynamicArrive.h"
+#include "SteeringBehaviourDynamicWander.h"
 
 #include "Vektoria\Root.h"
 
